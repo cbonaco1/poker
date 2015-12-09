@@ -2,6 +2,11 @@ require_relative 'card'
 require_relative 'deck'
 
 class Hand
+
+  PATTERNS = [:straight_flush?, :four_of_a_kind?, :full_house?, :flush?, :straight?,
+    :three_of_a_kind?, :two_pair?, :one_pair?]
+
+
   attr_reader :cards
   attr_accessor :pattern, :high_card
 
@@ -9,6 +14,10 @@ class Hand
     @cards = cards
     # @pattern = :none
     # @high_card =
+  end
+
+  def pattern
+    return pattern
   end
 
   def flush?
